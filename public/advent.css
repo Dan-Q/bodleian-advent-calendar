@@ -34,6 +34,7 @@ body.loading * {
 
 .box {
   position: relative;
+  perspective: 800px;
 }
 
 .behind, .door {
@@ -59,10 +60,11 @@ body.loading * {
   transition: transform 1.5s cubic-bezier(.88,.78,.35,1.05), opacity 0.75s 0.75s linear;
   transform: rotateY(0deg);
   opacity: 1;
+  backface-visibility: hidden;
 }
 
 .door.open {
-  transform: rotateY(95deg);
+  transform: rotateY(105deg);
   opacity: 0;
 }
 
@@ -96,18 +98,6 @@ body.landscape .portrait-only {
   margin-bottom: 1em;
   font-size: 120%;
 }
-
-
-
-
-/* To re-cut images:
-   1. delete the lines below
-   2. run images dir, run ./cut.rb >> ../advent.css
-   3. ...?
-   4. profit!!!
- */
-
-
 
 /* 320px wide version */
 @media (min-width: 319px) and (min-height: 179px) {
