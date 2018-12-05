@@ -1,0 +1,402 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: black url(images/table.jpg);
+  background-size: cover;
+  height: 100vh;
+  color: white;
+  font-family: sans-serif;
+  overflow: hidden;
+}
+
+body.loading * {
+  display: none;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  justify-content: center;
+}
+
+.calendar {
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  background: pink;
+}
+
+.box {
+  position: relative;
+}
+
+.behind, .door {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.behind {
+  line-height: 0;
+}
+
+.door {
+  background: #f6f3df;
+  border: 0.25vw solid #201313;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  font-weight: bold;
+  transform-origin: left;
+  transition: transform 1.5s cubic-bezier(.88,.78,.35,1.05), opacity 0.75s 0.75s linear;
+  transform: rotateY(0deg);
+  opacity: 1;
+}
+
+.door.open {
+  transform: rotateY(95deg);
+  opacity: 0;
+}
+
+.box-24 {
+  grid-row: span 2;
+}
+
+/* 320px wide and fallback (mobile first) version */
+.calendar {
+  width: 320px;
+  height: 180px;
+}
+
+.box, .behind, .door, .behind img {
+  width: 64px;
+  height: 36px;
+}
+
+.box-24, .box-24 .behind, .box-24 .door {
+  height: 72px;
+}
+
+/* Portrait/lanscape only content */
+body.portrait .landscape-only,
+body.landscape .portrait-only {
+  display: none;
+}
+
+.notification {
+  text-align: center;
+  margin-bottom: 1em;
+  font-size: 120%;
+}
+
+
+
+
+/* To re-cut images:
+   1. delete the lines below
+   2. run images dir, run ./cut.rb >> ../advent.css
+   3. ...?
+   4. profit!!!
+ */
+
+
+
+/* 320px wide version */
+@media (min-width: 319px) and (min-height: 179px) {
+  .calendar {
+    width: 320px;
+    height: 180px;
+  }
+
+  .box, .behind, .door, .behind img {
+    width: 64px;
+    height: 36px;
+  }
+
+  .door {
+    font-size: 18px;
+  }
+
+  .box-24, .box-24 .behind, .box-24 .door {
+    height: 72px;
+  }
+}
+
+
+/* 480px wide version */
+@media (min-width: 479px) and (min-height: 269px) {
+  .calendar {
+    width: 480px;
+    height: 270px;
+  }
+
+  .box, .behind, .door, .behind img {
+    width: 96px;
+    height: 54px;
+  }
+
+  .door {
+    font-size: 27px;
+  }
+
+  .box-24, .box-24 .behind, .box-24 .door {
+    height: 108px;
+  }
+}
+
+
+/* 640px wide version */
+@media (min-width: 639px) and (min-height: 359px) {
+  .calendar {
+    width: 640px;
+    height: 360px;
+  }
+
+  .box, .behind, .door, .behind img {
+    width: 128px;
+    height: 72px;
+  }
+
+  .door {
+    font-size: 36px;
+  }
+
+  .box-24, .box-24 .behind, .box-24 .door {
+    height: 144px;
+  }
+}
+
+
+/* 960px wide version */
+@media (min-width: 959px) and (min-height: 539px) {
+  .calendar {
+    width: 960px;
+    height: 540px;
+  }
+
+  .box, .behind, .door, .behind img {
+    width: 192px;
+    height: 108px;
+  }
+
+  .door {
+    font-size: 54px;
+  }
+
+  .box-24, .box-24 .behind, .box-24 .door {
+    height: 216px;
+  }
+}
+
+^Ccut.rb:16:in ``': Interrupt
+        from cut.rb:16:in `block in <main>'
+        from cut.rb:11:in `each'
+        from cut.rb:11:in `<main>'
+
+[bodl2255@www-prd images]$ ruby cut.rb >> ../advent.css
+[bodl2255@www-prd images]$ ruby cut.rb
+
+/* 320px wide version */
+@media (min-width: 319px) and (min-height: 179px) {
+  .calendar {
+    width: 320px;
+    height: 180px;
+  }
+
+  .box, .behind, .door, .behind img {
+    width: 64px;
+    height: 36px;
+  }
+
+  .door {
+    font-size: 18px;
+  }
+
+  .box-24, .box-24 .behind, .box-24 .door {
+    height: 72px;
+  }
+}
+
+
+/* 480px wide version */
+@media (min-width: 479px) and (min-height: 269px) {
+  .calendar {
+    width: 480px;
+    height: 270px;
+  }
+
+  .box, .behind, .door, .behind img {
+    width: 96px;
+    height: 54px;
+  }
+
+  .door {
+    font-size: 27px;
+  }
+
+  .box-24, .box-24 .behind, .box-24 .door {
+    height: 108px;
+  }
+}
+
+
+/* 640px wide version */
+@media (min-width: 639px) and (min-height: 359px) {
+  .calendar {
+    width: 640px;
+    height: 360px;
+  }
+
+  .box, .behind, .door, .behind img {
+    width: 128px;
+    height: 72px;
+  }
+
+  .door {
+    font-size: 36px;
+  }
+
+  .box-24, .box-24 .behind, .box-24 .door {
+    height: 144px;
+  }
+}
+
+
+/* 960px wide version */
+@media (min-width: 959px) and (min-height: 539px) {
+  .calendar {
+    width: 960px;
+    height: 540px;
+  }
+
+  .box, .behind, .door, .behind img {
+    width: 192px;
+    height: 108px;
+  }
+
+  .door {
+    font-size: 54px;
+  }
+
+  .box-24, .box-24 .behind, .box-24 .door {
+    height: 216px;
+  }
+}
+
+
+/* 1280px wide version */
+@media (min-width: 1279px) and (min-height: 719px) {
+  .calendar {
+    width: 1280px;
+    height: 720px;
+  }
+
+  .box, .behind, .door, .behind img {
+    width: 256px;
+    height: 144px;
+  }
+
+  .door {
+    font-size: 72px;
+  }
+
+  .box-24, .box-24 .behind, .box-24 .door {
+    height: 288px;
+  }
+}
+
+
+/* 1600px wide version */
+@media (min-width: 1599px) and (min-height: 899px) {
+  .calendar {
+    width: 1600px;
+    height: 900px;
+  }
+
+  .box, .behind, .door, .behind img {
+    width: 320px;
+    height: 180px;
+  }
+
+  .door {
+    font-size: 90px;
+  }
+
+  .box-24, .box-24 .behind, .box-24 .door {
+    height: 360px;
+  }
+}
+
+
+/* 1920px wide version */
+@media (min-width: 1919px) and (min-height: 1079px) {
+  .calendar {
+    width: 1920px;
+    height: 1080px;
+  }
+
+  .box, .behind, .door, .behind img {
+    width: 384px;
+    height: 216px;
+  }
+
+  .door {
+    font-size: 108px;
+  }
+
+  .box-24, .box-24 .behind, .box-24 .door {
+    height: 432px;
+  }
+}
+
+
+/* 2880px wide version */
+@media (min-width: 2879px) and (min-height: 1619px) {
+  .calendar {
+    width: 2880px;
+    height: 1620px;
+  }
+
+  .box, .behind, .door, .behind img {
+    width: 576px;
+    height: 324px;
+  }
+
+  .door {
+    font-size: 162px;
+  }
+
+  .box-24, .box-24 .behind, .box-24 .door {
+    height: 648px;
+  }
+}
+
+
+/* 3840px wide version */
+@media (min-width: 3839px) and (min-height: 2159px) {
+  .calendar {
+    width: 3840px;
+    height: 2160px;
+  }
+
+  .box, .behind, .door, .behind img {
+    width: 768px;
+    height: 432px;
+  }
+
+  .door {
+    font-size: 216px;
+  }
+
+  .box-24, .box-24 .behind, .box-24 .door {
+    height: 864px;
+  }
+}
