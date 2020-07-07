@@ -3,7 +3,7 @@
 For the last few years, I've helped the Bodleian Libraries to produced a digital advent calendar for their website with different
 things behind the doors. In 2018 we replaced our existing approach with a new one which gradually, over the course of the run-up
 to Christmas, reveals a single large picture we'd commissioned for that purpose. You can see it at
-https://www.bodleian.ox.ac.uk/advent2018.
+https://www.bodleian.ox.ac.uk/advent2018. I wrote a blog post about it at https://danq.me/2018/12/05/advent2018/.
 
 If you'd like one of your own, this project gives your the skeleton to do so. You'll need:
 
